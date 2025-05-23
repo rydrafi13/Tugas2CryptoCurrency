@@ -1,22 +1,24 @@
+// src/router/index.ts
+
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
-import HomePage from '../views/HomePage.vue'
+import HomePage from '../views/HomePage.vue'; // Mengimpor HomePage
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/home'
+    redirect: '/home' // Mengarahkan ke /home secara default
   },
   {
     path: '/home',
     name: 'Home',
-    component: HomePage
+    component: HomePage // Menggunakan HomePage sebagai komponen untuk rute /home
   }
-]
+];
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(process.env.BASE_URL),
   routes
-})
+});
 
-export default router
+export default router;
